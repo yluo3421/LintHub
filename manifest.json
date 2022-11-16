@@ -22,7 +22,7 @@
         "storage",
         "https://github.com/*",
         "https://api.github.com/*",
-        "https://lintcode.com/*",
+        "https://leetcode.com/*",
         "https://lintcode.com/*"
     ],
     "content_scripts": [
