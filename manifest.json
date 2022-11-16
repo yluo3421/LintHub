@@ -1,0 +1,45 @@
+{
+    "manifest_version": 3,
+    "name": "LintHub",
+    "description": "Upload submitted code of LintCode to GitHub",
+    "version": "1.0",
+    "author": "Yeming Luo",
+    "browser_action": {
+        "default_icon": "assets/thumbnail.png"
+    },
+    "icons": {
+        "16": "assets/thumbnail.png",
+        "48": "assets/thumbnail.png",
+        "128": "assets/thumbnail.png"
+    },
+    "background": {
+        "service_worker": ["scripts/background.js"],
+        "persistent": false
+    },
+    "permission": [
+        "tabs",
+        "unlimitedStroage",
+        "storage",
+        "https://github.com/*",
+        "https://api.github.com/*",
+        "https://lintcode.com/*",
+        "https://lintcode.com/*"
+    ],
+    "content_scripts": [
+        {
+            "matches": [
+              "https://leetcode.com/*",
+              "https://github.com/*",
+              "https://practice.geeksforgeeks.org/*"
+            ],
+            "js": [
+              "scripts/leetcode.js",
+              "scripts/authorize.js",
+              "scripts/gfg.js"
+            ],
+            "run_at": "document_idle"
+        }
+    ],
+    "content_security_policy": "script-src 'self' https://code.jquery.com/jquery-3.3.1.min.js https://github.com/login/oauth/authorize https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js; object-src 'self'"
+
+}
