@@ -30,12 +30,11 @@
             "matches": [
               "https://leetcode.com/*",
               "https://github.com/*",
-              "https://practice.geeksforgeeks.org/*"
+              "https//lintcode.com/*"
             ],
             "js": [
-              "scripts/leetcode.js",
-              "scripts/authorize.js",
-              "scripts/gfg.js"
+              "scripts/lintcode.js",
+              "scripts/authorize.js"
             ],
             "run_at": "document_idle"
         }
