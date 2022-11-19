@@ -4,19 +4,22 @@ let uploadState = { uploading: false }
 function findLanguage() {
     
 };
-// let new = document.getElementsByClassName("lanauage-python");
-// console.log(new);
-let old = document.getElementsByClassName('status-column__3SUg');
-console.log(old);
+// doesnt work for this webpage
+let new_way = document.getElementsByClassName("lanauage-python"); 
+console.log(new_way);
+// can find the element but cannot find the children
+// maybe we can directly copy it to the README.md
+new_way = document.getElementsByTagName("code")
+document.getElementsByTagName("code")[0].childNodes
+// [span, span, span, span, span, span, span, span]
+// map all span's inner text
+// will get all codes in text
 
-/* Found the original method of grabbing submission URL and find 
-submitted code and other data.
-Now the new format of the leetcode doesn't supply this method. 
-I found that code and other data are presented at the webpage after submission.
-Thinking the new procedure might be find out submitted, and 
-find element by class name and thus find code and upload to GitHub Repo.
-The current issue is element find by class name doesnt contain 
-the information shown in console. */
+
+// doesnt work anymore
+let old_way = document.getElementsByClassName('status-column__3SUg');
+console.log(old_way);
+
 
 /* This function is the main function to upload code to GitHub
     repo. And callback cb here is saved for future use */
