@@ -149,6 +149,8 @@ const linkRepo = (token, name) => {
   xhr.addEventListener('readystatechange', function () {
     if (xhr.readyState === 4) {
       const res = JSON.parse(xhr.responseText);
+      console.log("!!!!!!!!!!!!! res = parse(xhr.responseText)");
+      console.log(res);
       const bool = linkStatusCode(xhr.status, name);
       if (xhr.status === 200) {
         // BUG FIX
