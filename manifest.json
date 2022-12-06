@@ -1,10 +1,10 @@
 {
   "manifest_version": 2,
   "name": "LeetHubLocalTesting",
-  "description": "Automatically integrate your Leetcode & GeeksforGeeks submissions to GitHub",
-  "homepage_url": "https://github.com/QasimWani/LeetHub",
-  "version": "1.1.2",
-  "author": "Qasim Wani",
+  "description": "Automatically upload your Leetcode submissions to GitHub",
+  "homepage_url": "https://github.com/yluo3421/LintHub",
+  "version": "0.0",
+  "author": "yluo3421",
   "browser_action": {
     "default_icon": "assets/thumbnail.png",
     "default_popup": "popup.html"
@@ -22,7 +22,6 @@
     "https://github.com/*",
     "https://api.github.com/*",
     "https://leetcode.com/*",
-    "https://practice.geeksforgeeks.org/*",
     "tabs",
     "unlimitedStorage",
     "storage"
@@ -31,13 +30,11 @@
     {
       "matches": [
         "https://leetcode.com/*",
-        "https://github.com/*",
-        "https://practice.geeksforgeeks.org/*"
+        "https://github.com/*"
       ],
       "js": [
         "scripts/leetcode.js",
-        "scripts/authorize.js",
-        "scripts/gfg.js"
+        "scripts/authorize.js"
       ],
       "run_at": "document_idle"
     }
