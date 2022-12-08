@@ -267,9 +267,11 @@ function findCode(
   cb = undefined,
 ) {
   /* Get the submission details url from the submission page. */
+  console.log("!!!!!!!!!!!!!!!findcode is running")
   var submissionURL;
   const e = document.getElementsByClassName('status-column__3SUg');
   if (checkElem(e)) {
+    console.log("!!!!!!!!!!!!!!!findcode finds className status-column__3SUg")
     // for normal problem submisson
     const submissionRef = e[1].innerHTML.split(' ')[1];
     submissionURL =
@@ -283,17 +285,22 @@ function findCode(
 
   if (submissionURL != undefined) {
     /* Request for the submission details page */
+    console.log("!!!!!!!!!!!!!!!findcode is working on submissionURL")
     const xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
       if (this.readyState == 4 && this.status == 200) {
         /* received submission details as html reponse. */
+        
         var doc = new DOMParser().parseFromString(
           this.responseText,
           'text/html',
         );
+        
         /* the response has a js object called pageData. */
         /* Pagedata has the details data with code about that submission */
         var scripts = doc.getElementsByTagName('script');
+        console.log("!!!!!!!!!!!!!!!findcode found scripts")
+        console.log(scripts)
         for (var i = 0; i < scripts.length; i++) {
           var text = scripts[i].innerText;
           if (text.includes('pageData')) {
@@ -344,7 +351,7 @@ function findCode(
               );
               msg = `Time: ${resultRuntime}, Memory: ${resultMemory} - LeetHub`;
             }
-
+            console.log(code)
             if (code != null) {
               setTimeout(function () {
                 uploadGit(
